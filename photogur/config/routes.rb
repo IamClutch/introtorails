@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
   root 'pictures#index'
   resources :pictures
-  get 'pictres/:id/edit' => "pictures#edit", as: "edit_picture"
-  patch 'pictures/:id' => "pictures#update"
 
-  get 'pictures' => 'pictures#index'
-  post 'pictures' => 'pictures#create'
-  get 'pictures/new' => 'pictures#new'
-  get 'pictures/:id' => 'pictures#show', as: 'picture'
-  delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture"
-  root 'pictures#index'
+
 
 
   # You can have the root of your site routed with "root"
