@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'pictures#index'
+  get 'pictres/:id/edit' => "pictures#edit", as: "edit_picture"
+  patch 'pictures/:id' => "pictures#update"
+
   get 'pictures' => 'pictures#index'
   post 'pictures' => 'pictures#create'
   get 'pictures/new' => 'pictures#new'

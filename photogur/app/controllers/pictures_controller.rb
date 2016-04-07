@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
 
+
   def index
     @pictures = Picture.all
   end
@@ -21,6 +22,20 @@ class PicturesController < ApplicationController
     else
       # otherwise render the view associated with the action :new (i.e. new.html.erb)
       render :new
+    end
+  end
+
+  def edit
+    @picture = Picture.find(params[:id])
+  end
+
+  def update
+    @pictures = Picture.find(params[:id])
+
+    if @picture.update_attributes(picture_params)
+      redirect_to "/pictures/#{@picture.id}"
+    else
+      render :edit
     end
   end
 
